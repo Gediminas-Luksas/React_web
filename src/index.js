@@ -10,9 +10,16 @@ import App from './App';
 import './assets/scss/app.scss';
 import * as serviceWorker from './serviceWorker';
 import rootReducer from './rootReducer';
+import { userLoggedIn } from './actions/auth';
+
 
 
 const store = createStore(rootReducer,composeWithDevTools(applyMiddleware(thunk)));
+
+if(localStorage.dbJWT){
+    const user = { token: localStorage.dbJWT };
+    store.dispatch(userLoggedIn(user));
+}
 
 ReactDOM.render(
     <BrowserRouter>
