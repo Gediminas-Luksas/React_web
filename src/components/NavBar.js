@@ -11,7 +11,7 @@ const NavBar = ({ isAuthenticated, logout }) => (
                 <Link to="/">Fifa 2019 World Cup</Link>
                 </h1>
                     <ul>
-                        <li><Link to="profiles">Developers</Link></li>
+                        <li><Link to="posts">Users Posts</Link></li>
                         <li><Link to="register">Register</Link></li>
                         <li>{ isAuthenticated ? (
                             <Link to="/" onClick={() => logout()}>Logout</Link> 
